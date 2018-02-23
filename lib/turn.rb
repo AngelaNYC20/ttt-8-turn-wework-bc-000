@@ -12,17 +12,16 @@ def move(board, index, value="X")
 end
 
 def turn(board)
-   puts "Plase enter 1-9:"
+   puts "Please enter 1-9:"
    input = gets.strip
    index = input_to_index(input)
    
-   if valid_move?(board,index)
-   move(board, index, "O")
-   display_board(board)
-  
-   else 
-   turn(board)
-   end 
+  if valid_move?(board,index)
+     move(board, index)
+     display_board(board)
+  else 
+    turn(board)
+  end 
 end 
 
 
@@ -32,16 +31,15 @@ end
 
 
 def valid_move?(board,index)
-  
- if board[index] == " "
-   true 
-  elsif board[index] == be_between?(0,8)
-   true 
-  elsif board[index] == 4
-   nil || false
-  elsif board[index] == be_between?(1,9)
-   nil || false
-  end 
+ if index.between?(0,8) 
+   if board[index] == " "
+     true
+   else
+     false
+   end
+  else
+    false
+  end
 end 
 
 
