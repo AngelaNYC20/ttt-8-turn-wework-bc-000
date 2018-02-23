@@ -35,15 +35,6 @@ def valid_move?(board,index)
   
  if board[index] == " "
    true 
-  elsif board[index] == be_between?(0,8)
-   true 
-  elsif board[index] == 4
-   nil || false
-  elsif board[index] == be_between?(1,9)
-   nil || false
-  elsif board[index] == -1
-   false 
-  end 
 end 
 
 
